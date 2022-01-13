@@ -38,3 +38,54 @@ def get_matching_column_names(data, pattern):
 
     """
     ...
+
+
+def calculate_percentage_change(
+    df, pattern, period=(2, 2), filter=None, changed_name=None
+):
+    """Calculate percentage change over a time period
+    (months over months or weeks over weeks)
+    for the given column pattern.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        A pandas dataframe
+    pattern : str
+        A column pattern:
+        pay_amt represents pay_amt1, pay_amt2...
+    period: tuple
+        Comparison period:
+        for 2 months over 2 months , period = (2, 2)
+    filter: tuple
+        Time period (months or weeks) for comparison
+    changed_name: str
+        Final column name
+
+    Returns
+    -----------
+    df: pandas.DataFrame
+        A dataframe with all the derived features.
+
+    Raises
+    ----------
+    TypeError
+        If the type of df is not a pandas dataframe or
+        If the pattern is not a string
+        If filter is not a tuple
+
+    Examples
+    ----------
+    >>> data = {
+        "week_payment1": [10, 5, 20],
+        "week_payment2": [50, 20, 5]
+        }
+    >>> df = pd.DataFrame(data)
+    >>> calculate_percentage_change(df, "week_payment", (1, 1))
+         week_payment1  week_payment2  week_payment_pct_change_1w_1w
+     0             10             50                          80.0
+     1              5             20                          75.0
+     2             20              5                         -300.0
+    """
+
+    return
