@@ -82,3 +82,40 @@ def calculate_standard_deviation(data, cols):
     ...
 
 
+def calculate_average(df, pattern):
+    """[summary]
+
+    Parameters
+    ----------
+    df : pandas dataframe
+        The dataframe to calculate average
+    pattern : string
+        The prefix of the column names to calculate average. For example,  "week_payment"
+
+    Returns
+    ----------
+    pandas dataframe
+        A dataframe contains average columns
+
+    Raises
+    ----------
+    TypeError
+        If the type of data is not a pandas dataframe or
+        if the pattern is not a matching string
+
+    Examples
+    ----------
+    >>> data = {
+        "week_payment1": [1, 2, 3],
+        "week_payment2": [1, 2, 3],
+        "week_payment3": [1, 2, 3],
+        "othercolumn": [5, 6, 7]}
+    >>> df = pd.DataFrame(data)
+    >>> calculate_average(df, "week_payment")
+        ID    week_payment_avg  
+        0              1.0
+        1              2.0
+        2              3.0
+
+    """
+    ...
