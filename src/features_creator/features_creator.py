@@ -41,11 +41,36 @@ def get_matching_column_names(data, pattern):
 
 
 def calculate_percentage_change(
-    df, pattern, period=(2, 2), filter=None, changed_name=None
+    df, pattern, period=(2, 2), time_filter=None, changed_name=None
 ):
     """Calculate percentage change over a time period
     (months over months or weeks over weeks)
     for the given column pattern.
+    
+    Use case:
+        This function aims to generate features to capture trend
+        in data for a given time period. Example: 
+        Telcom - Predict customers who are more likely to decline their revenue next month/week.
+        Finance - Predict customers who are going to default next month/week.
+
+    Steps:
+        1. Get matching columns for the pattern.
+        
+        2. Apply time_filter if available. 
+        Example: time_filter = (1, 2, 3, 4) filters out columns corresponding to
+        weeks 1, 2 , 3 and 4 out of all the weeks available.
+        week 1 represent last week data, week 2 last to last week and so on.
+
+        3. Determine start and end period.
+        Example: period = (2, 3), corresponds to the percentage for 
+        last 2 weeks vs previous 3 weeks (with respect to last 2 weeks)
+        
+        4. Calculate percentage change between two periods.
+        Example: Percentage change of normalized week_payment in last 2 weeks
+         vs percentage change in normalized week payment in 
+         previous 3 weeks (with rest to last 3 weeks)
+        
+        5. Change the column name as per changed_name parameter.
 
     Parameters
     ----------
@@ -57,8 +82,8 @@ def calculate_percentage_change(
     period: tuple
         Comparison period:
         for 2 months over 2 months , period = (2, 2)
-    filter: tuple
-        Time period (months or weeks) for comparison
+    time_filter: tuple
+        Time filter (months or weeks) for comparison
     changed_name: str
         Final column name
 
