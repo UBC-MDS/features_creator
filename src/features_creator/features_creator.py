@@ -81,7 +81,7 @@ def calculate_percentage_change(
         pay_amt represents pay_amt1, pay_amt2...
     compare_period: tuple
         Comparison period:
-        for 2 months over 2 months , period = (2, 2)
+        for 2 months over 2 months , compare_period = (2, 2)
     time_filter: tuple
         Time filter (months or weeks) for comparison
     changed_name: str
@@ -115,4 +115,3 @@ def calculate_percentage_change(
     """
 
     return
-    
