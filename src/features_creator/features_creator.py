@@ -89,8 +89,8 @@ def calculate_percentage_change(
 
     Returns
     -----------
-    df: pandas.DataFrame
-        A dataframe with all the derived features
+    percent_change: array_like
+        A pandas series/numpy array of calculated column
 
     Raises
     ----------
@@ -108,10 +108,10 @@ def calculate_percentage_change(
         }
     >>> df = pd.DataFrame(data)
     >>> calculate_percentage_change(df, "week_payment", (1, 1))
-         week_payment1  week_payment2  week_payment_pct_change_1w_1w
-     0             10             50                          80.0
-     1              5             20                          75.0
-     2             20              5                         -300.0
+         week_payment_pct_change_1w_1w
+     0                          80.0
+     1                          75.0
+     2                         -300.0
     """
 
     return
