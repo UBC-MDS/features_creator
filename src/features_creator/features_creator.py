@@ -83,7 +83,8 @@ def calculate_standard_deviation(data, cols):
 
 
 def calculate_average(df, pattern):
-    """[summary]
+    """
+    Returns a dataframe with average of specific columns matching pattern.
 
     Parameters
     ----------
