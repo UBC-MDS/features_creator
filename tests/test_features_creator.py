@@ -13,18 +13,17 @@ def test_get_matching_column_names():
         "week_payment1": [1, 2, 3],
         "week_payment2": [1, 2, 3],
         "week_payment3": [1, 2, 3],
-        "othercolumn": [5, 6, 7]
+        "othercolumn": [5, 6, 7],
+        "week_payment_string4": [5, 6, 7]
     })
 
     # Returns the correct type
     assert isinstance(get_matching_column_names(test_df, "week_payment"), list)
 
-    # Normal usage test
-    assert get_matching_column_names(test_df, "week_payment") == [
-        "week_payment1", "week_payment2", "week_payment3"]
-
     # Does not return extra columns
     assert "othercolumn" not in get_matching_column_names(
+        test_df, "week_payment")
+    assert "week_payment_string7" not in get_matching_column_names(
         test_df, "week_payment")
 
     # Raises exceptions for wrong types
@@ -35,3 +34,7 @@ def test_get_matching_column_names():
     # Raises an exception for no matches
     with pytest.raises(ValueError):
         get_matching_column_names(test_df, "fake_string")
+
+    # Normal usage test
+    assert get_matching_column_names(test_df, "week_payment") == [
+        "week_payment1", "week_payment2", "week_payment3"]
