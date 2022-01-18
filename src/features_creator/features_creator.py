@@ -14,8 +14,8 @@ def get_matching_column_names(data, pattern):
 
     Returns
     ----------
-    columns : pandas dataframe
-        A dataframe consisting of the matching columns
+    columns : list of strings
+        A list of strings that match the pattern
 
     Raises
     ----------
@@ -32,10 +32,7 @@ def get_matching_column_names(data, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> get_matching_column_names(df, "week_payment")
-        week_payment1  week_payment2  week_payment3
-     0              1              1              1
-     1              2              2              2
-     2              3              3              3
+        ["week_payment1", "week_payment2", "week_payment3"]
 
     """
     ...
