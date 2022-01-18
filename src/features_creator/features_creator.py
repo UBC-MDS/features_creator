@@ -129,9 +129,8 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
         If the pattern is not a string
         If compare_period is not a tuple
         If time_filter is not a tuple
-    AssertionError
-        If sum of start period and end period is greater than total number of columns
     ValueError
+        If sum of start period and end period is greater than total number of columns
         If column pattern from time_filter is not present in all columns
 
     Examples
@@ -144,7 +143,7 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
     >>> df = pd.DataFrame(data)
     >>> calculate_percentage_change(df, "week_payment", compare_period=(1, 1))
     array([-80., -75., 300.])
-    >>> calculate_percentage_change(df, "week_payment", compare_period=(1, 1), 
+    >>> calculate_percentage_change(df, "week_payment", compare_period=(1, 1),
         time_filter=(1, 3))
     array([-90., -75., 300.])
     """
@@ -186,9 +185,11 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
     start, end = compare_period
 
     # sum of start and end should not exceed number of columns
-    assert start + end <= len(
-        columns
-    ), "Sum of start period and end end should not exceed total number of columns"
+    if start + end > len(columns):
+        raise ValueError(
+            """Sum of start period and end period must not exceed 
+        total number of columns"""
+        )
 
     # Change mom
     df = df.assign(p1=df[columns[:start]].sum(axis=1)).assign(
@@ -211,6 +212,7 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
     )
 
     return percent_change
+
 
 def calculate_average(df, pattern):
     """
