@@ -191,7 +191,7 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
         total number of columns"""
         )
 
-    # Change mom
+    # Calculate percentage change
     df = df.assign(p1=df[columns[:start]].sum(axis=1)).assign(
         p2=df[columns[start : start + end]].sum(axis=1) / (end / start),
     )
