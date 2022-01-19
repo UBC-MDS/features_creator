@@ -43,15 +43,20 @@ def get_matching_column_names(data, pattern):
     """
     ...
 
-def calculate_standard_deviation(data, cols):
+
+def calculate_standard_deviation(data, pattern):
+
     """Returns a dataframe with standard deviation of specific columns.
+    
     Calculating standard deviation of columns inputed.
+    
     Parameters
     ----------
     data : pandas dataframe
         The dataframe to calculate standard deviation
-    cols : list
-        The column names to calculate
+    pattern : string
+        The prefix of the column names to extract
+
     Returns
     ----------
     columns : pandas dataframe
@@ -66,13 +71,14 @@ def calculate_standard_deviation(data, cols):
     >>> data = {
         "week_payment1": [1, 1, 1],
         "week_payment2": [1, 1, 1],
-        "week_payment3": [2, 2, 2],
+        "week_payment3": [1, 1, 1],
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
-    >>> cols = ["week_payment1", "week_payment2", "week_payment3"]
-    >>> calculate_standard_deviation(df, cols)
-        week_payment1  week_payment2  week_payment3
-     0              0              0              0
+    >>> calculate_standard_deviation(df, "week_payment")
+        week_payment_std
+     0              0.0   
+     1              0.0   
+     2              0.0   
     """
     ...
     
