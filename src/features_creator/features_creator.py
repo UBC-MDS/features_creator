@@ -41,8 +41,6 @@ def get_matching_column_names(data, pattern):
      2              3              3              3
 
     """
-    ...
-
 
 def calculate_standard_deviation(data, pattern):
 
