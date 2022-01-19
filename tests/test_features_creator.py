@@ -1,4 +1,4 @@
-from features_creator import get_matching_column_names
+from features_creator.features_creator import get_matching_column_names
 import pandas as pd
 import pytest
 
