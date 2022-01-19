@@ -34,4 +34,7 @@ def test_calculate_average(data_df):
         # check if ValueError is raised when columns not found
         calculate_average(data_df, "not_a_column")
 
+    # Test for return type
+    assert isinstance(calculate_average(data_df, "week_payment"), np.ndarray)
+
     
