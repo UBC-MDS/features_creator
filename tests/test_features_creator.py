@@ -52,5 +52,7 @@ def test_calculate_average(data_df):
         df_1row, "week_payment"), np.array([1]))
     
 
-  
+    # Test the function return correct value 
+    assert np.array_equal(calculate_average(
+        data_df, "week_payment"), np.array([4, 5, 6]))
 
