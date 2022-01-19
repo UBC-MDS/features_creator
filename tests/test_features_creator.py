@@ -37,4 +37,11 @@ def test_calculate_average(data_df):
     # Test for return type
     assert isinstance(calculate_average(data_df, "week_payment"), np.ndarray)
 
+    # Test the function with a dataframe with only one column
+    data_1col = {
+        "week_payment1": [1, 2, 3]}
+    df_1col = pd.DataFrame(data_1col)
+    assert np.array_equal(calculate_average(
+        df_1col, "week_payment"), np.array([1, 2, 3]))
+
     
