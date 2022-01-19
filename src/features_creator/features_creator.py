@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+import re
 
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
@@ -61,8 +64,9 @@ def calculate_standard_deviation(data, pattern):
     Raises
     ----------
     TypeError
-        If the type of data is not a pandas dataframe or
-        if the cols containes elements not in the dataframe
+        If the data variable needs to be a pandas dataframe
+        If the pattern variable needs to be a string
+        If the data frame selected by pattern has non-numeric columns
     Examples
     ----------
     >>> data = {
@@ -77,7 +81,25 @@ def calculate_standard_deviation(data, pattern):
      1              0.0   
      2              0.0   
     """
-    ...
+    
+    if not isinstance(data, pd.DataFrame):
+        raise TypeError("The data variable needs to be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("The pattern variable needs to be a string")
+
+    columns = get_matching_column_names(data, pattern)
+    data_cal = data[columns]
+
+    num_columns = data_cal.select_dtypes(include=np.number).columns.tolist()
+    if sorted(columns) != sorted(num_columns):
+        nonum_columns = set(columns).difference(set(num_columns))
+        raise TypeError(f"Data frame selected by pattern:'{pattern}' has non-numeric columns: {nonum_columns}.")
+
+    out_val = np.var(data_cal, axis=1)
+    out_col = pattern+'_std'
+
+    return pd.DataFrame(out_val, columns=[out_col])
+    
     
 def calculate_percentage_change(
     df, pattern, compare_period=(2, 2), time_filter=None, changed_name=None
