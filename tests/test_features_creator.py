@@ -44,4 +44,13 @@ def test_calculate_average(data_df):
     assert np.array_equal(calculate_average(
         df_1col, "week_payment"), np.array([1, 2, 3]))
 
+    # Test the function return correct value when there is only one row
+    data_1row = {
+        "week_payment1": [1]}
+    df_1row = pd.DataFrame(data_1row)
+    assert np.array_equal(calculate_average(
+        df_1row, "week_payment"), np.array([1]))
     
+
+  
+
