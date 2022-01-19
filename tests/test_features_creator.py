@@ -27,4 +27,11 @@ def test_calculate_average(data_df):
         # check if TypeError is raised when pattern is not a string
         calculate_average(data_df, 1)
     
+    # Test for ValueError
+    with pytest.raises(ValueError):
+        # check if ValueError is raised when pattern is not a string
+        calculate_average(data_df, "")
+        # check if ValueError is raised when columns not found
+        calculate_average(data_df, "not_a_column")
+
     
