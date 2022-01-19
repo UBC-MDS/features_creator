@@ -172,8 +172,8 @@ def calculate_average(df, pattern):
 
     Returns
     ----------
-    pandas dataframe
-        A dataframe contains average columns
+    numpy array
+        A numpy array of calculated average
 
     Raises
     ----------
@@ -205,10 +205,10 @@ def calculate_average(df, pattern):
     # get matching columns
     columns = get_matching_column_names(df, pattern)
 
-    # calculate average
-    average = columns.mean()
+    # calculate average from matching columns
+    df_avg = df[columns].mean(axis=1)
 
-    # change column name
-    average.name = pattern + "_avg"
+    # convert to np array
+    df_avg = df_avg.to_numpy()
 
-    return average
+    return df_avg
