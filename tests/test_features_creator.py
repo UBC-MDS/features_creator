@@ -18,3 +18,13 @@ def data_df():
     return df
 
 
+def test_calculate_average(data_df):
+
+    # Test for TypeError
+    with pytest.raises(TypeError):
+        # check if TypeError is raised when data is not a pandas dataframe
+        calculate_average(1, "week_payment")
+        # check if TypeError is raised when pattern is not a string
+        calculate_average(data_df, 1)
+    
+    
