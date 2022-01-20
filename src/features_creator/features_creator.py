@@ -3,6 +3,10 @@ import pandas as pd
 import re
 
 
+import numpy as np
+import pandas as pd
+import re
+
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
     
@@ -198,8 +202,8 @@ def calculate_average(df, pattern):
 
     Returns
     ----------
-    pandas dataframe
-        A dataframe contains average columns
+    numpy array
+        A numpy array of calculated average
 
     Raises
     ----------
@@ -222,4 +226,19 @@ def calculate_average(df, pattern):
         2              3.0
 
     """
-    ...
+    # check input type
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df must be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("pattern must be a string")
+
+    # get matching columns
+    columns = get_matching_column_names(df, pattern)
+
+    # calculate average from matching columns
+    df_avg = df[columns].mean(axis=1)
+
+    # convert to np array
+    df_avg = df_avg.to_numpy()
+
+    return df_avg
