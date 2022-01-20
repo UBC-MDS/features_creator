@@ -191,7 +191,7 @@ def calculate_percentage_change(
 
 def calculate_average(df, pattern):
     """
-    Returns a dataframe with average of specific columns matching pattern.
+    Returns a np array with average of specific columns matching pattern.
 
     Parameters
     ----------
@@ -220,11 +220,7 @@ def calculate_average(df, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> calculate_average(df, "week_payment")
-        ID    week_payment_avg  
-        0              1.0
-        1              2.0
-        2              3.0
-
+        [1.0, 2.0, 3.0]
     """
     # check input type
     if not isinstance(df, pd.DataFrame):
