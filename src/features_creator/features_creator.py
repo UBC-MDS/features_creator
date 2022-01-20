@@ -161,7 +161,7 @@ def calculate_percentage_change(
 
 def calculate_average(df, pattern):
     """
-    Returns a dataframe with average of specific columns matching pattern.
+    Returns a np array with average of specific columns matching pattern.
 
     Parameters
     ----------
