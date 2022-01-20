@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import numpy as np
 import re
 
 
@@ -142,8 +143,6 @@ def calculate_percentage_change(
          vs percentage change in normalized week payment in
          previous 3 weeks (with rest to last 3 weeks)
 
-        5. Change the column name as per changed_name parameter.
-
     Parameters
     ----------
     df : pandas.DataFrame
@@ -156,37 +155,105 @@ def calculate_percentage_change(
         for 2 months over 2 months , compare_period = (2, 2)
     time_filter: tuple
         Time filter (months or weeks) for comparison
-    changed_name: str
-        Final column name
 
     Returns
     -----------
     percent_change: array_like
-        A pandas series/numpy array of calculated column
+        A numpy array containing percentage change
 
     Raises
     ----------
     TypeError
-        If the type of df is not a pandas dataframe or
+        If the type of df is not a pandas dataframe
         If the pattern is not a string
         If compare_period is not a tuple
-        If filter is not a tuple
+        If time_filter is not a tuple
+    ValueError
+        If sum of start period and end period is greater than total number of columns
+        If column pattern from time_filter is not present in all columns
 
     Examples
     ----------
     >>> data = {
         "week_payment1": [10, 5, 20],
-        "week_payment2": [50, 20, 5]
+        "week_payment2": [50, 20, 5],
+        "week_payment3": [100, 20, 5]
         }
     >>> df = pd.DataFrame(data)
-    >>> calculate_percentage_change(df, "week_payment", (1, 1))
-         week_payment_pct_change_1w_1w
-     0                          80.0
-     1                          75.0
-     2                         -300.0
+    >>> calculate_percentage_change(df, "week_payment", compare_period=(1, 1))
+    array([-80., -75., 300.])
+    >>> calculate_percentage_change(df, "week_payment", compare_period=(1, 1),
+        time_filter=(1, 3))
+    array([-90., -75., 300.])
     """
+    # Check input types
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Input df must be pandas dataframe")
 
-    return
+    if not isinstance(pattern, str):
+        raise TypeError("pattern must be a string")
+
+    if not isinstance(compare_period, tuple):
+        raise TypeError("compare_period must be a tuple")
+
+    if time_filter and not isinstance(time_filter, tuple):
+        raise TypeError("time_filter must be a tuple")
+
+    # Get matching columns
+    columns = sorted(get_matching_column_names(df, pattern))
+
+    # Time filter
+    if time_filter:
+        columns = sorted(
+            [
+                column
+                for column in columns
+                if int(re.findall(r"\d+", column)[-1]) in time_filter
+            ]
+        )
+
+        if len(columns) != len(time_filter):
+            raise ValueError(
+                f"""Column pattern from time_filter is not present in all columns 
+            Expected: {[pattern + str(i) for i in time_filter]}
+            Got: {columns}
+            """
+            )
+
+    # start, end
+    start, end = compare_period
+
+    # sum of start and end should not exceed number of columns
+    if start + end > len(columns):
+        raise ValueError(
+            """Sum of start period and end period must not exceed 
+        total number of columns"""
+        )
+
+    # Create p1 and p2
+    # p1 = sum of columns in period 1
+    # p2 = sum of columns in period 2
+    df = df.assign(p1=df[columns[:start]].sum(axis=1)).assign(
+        p2=df[columns[start : start + end]].sum(axis=1) / (end / start),
+    )
+
+    # fill na to zero
+    for col_ in ["p1", "p2"]:
+        df[col_] = df[col_].fillna(0)
+
+    # Calculate percentage change
+    percent_change = np.where(
+        (df.p1 == 0) & (df.p2 == 0),
+        0,
+        np.where(
+            df.p2 == 0,
+            (df.p1 - df.p2) * 100 / 0.01,
+            (df.p1 - df.p2) * 100 / df.p2,
+        ),
+    )
+
+    return percent_change
+
 
 
 def calculate_average(df, pattern):
