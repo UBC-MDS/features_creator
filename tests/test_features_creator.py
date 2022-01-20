@@ -22,10 +22,16 @@ def test_calculate_percentage_change():
     with pytest.raises(TypeError):
         # Check df
         calculate_percentage_change([1, 2, 3, 4], "data_usage")
+
+    with pytest.raises(TypeError):
         # Check pattern
         calculate_percentage_change(test_df, ["data_usage"])
+
+    with pytest.raises(TypeError):
         # Check compare_period
         calculate_percentage_change(test_df, "data_usage", compare_period="1, 1")
+
+    with pytest.raises(TypeError):
         # Check time_filter
         calculate_percentage_change(
             test_df, "data_usage", compare_period=(1, 1), time_filter="1, 3"
@@ -34,6 +40,8 @@ def test_calculate_percentage_change():
     # Check Value error
     with pytest.raises(ValueError):
         calculate_percentage_change(test_df, "data_usage", compare_period=(1, 4))
+
+    with pytest.raises(ValueError):
         calculate_percentage_change(
             test_df, "data_usage", compare_period=(1, 1), time_filter=(1, 5)
         )
@@ -49,6 +57,7 @@ def test_calculate_percentage_change():
     )
 
     # Check percentage_change return values
+    # Value for comparison are calculated manually using a online calculator
     np.testing.assert_allclose(
         calculate_percentage_change(test_df, "data_usage"),
         np.array([-37.5, -33.33333333, -16.66666667]),
