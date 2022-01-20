@@ -43,7 +43,7 @@ def get_matching_column_names(data, pattern):
     if not isinstance(pattern, str):
         raise TypeError("The pattern variable needs to be a string")
 
-    pattern = f"{pattern}\d+"
+    pattern = rf"{pattern}\d+"
     columns = [colname for colname in data.columns if re.match(pattern, colname)]
 
     if columns == []:

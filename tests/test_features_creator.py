@@ -18,13 +18,14 @@ def test_get_matching_column_names():
     })
 
     # Returns the correct type
-    assert isinstance(get_matching_column_names(test_df, "week_payment"), list)
+    assert isinstance(get_matching_column_names(
+        test_df, "week_payment"), list), "Returned the wrong data type"
 
     # Does not return extra columns
     assert "othercolumn" not in get_matching_column_names(
-        test_df, "week_payment")
+        test_df, "week_payment"), "`othercolumn` was returned"
     assert "week_payment_string7" not in get_matching_column_names(
-        test_df, "week_payment")
+        test_df, "week_payment"), "`week_payment_string7` was returned"
 
     # Raises exceptions for wrong types
     with pytest.raises(TypeError):
@@ -37,4 +38,4 @@ def test_get_matching_column_names():
 
     # Normal usage test
     assert get_matching_column_names(test_df, "week_payment") == [
-        "week_payment1", "week_payment2", "week_payment3"]
+        "week_payment1", "week_payment2", "week_payment3"], "Incorrect columns were returned"
