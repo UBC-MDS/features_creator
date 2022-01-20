@@ -4,28 +4,23 @@ import re
 
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
-
     Matching columns are columns whose names start
     with the given pattern and end with an incrementing integer.
-
     Parameters
     ----------
     data : pandas dataframe
         The dataframe from which to extract columns
     pattern : string
         The prefix of the column names to extract
-
     Returns
     ----------
-    columns : pandas dataframe
-        A dataframe consisting of the matching columns
-
+    columns : list of strings
+        A list of strings that match the pattern
     Raises
     ----------
     TypeError
         If the type of data is not a pandas dataframe or
         if the pattern is not a string
-
     Examples
     ----------
     >>> data = {
@@ -35,13 +30,20 @@ def get_matching_column_names(data, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> get_matching_column_names(df, "week_payment")
-        week_payment1  week_payment2  week_payment3
-     0              1              1              1
-     1              2              2              2
-     2              3              3              3
-
+        ["week_payment1", "week_payment2", "week_payment3"]
     """
-    ...
+    if not isinstance(data, pd.DataFrame):
+        raise TypeError("The data variable needs to be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("The pattern variable needs to be a string")
+
+    pattern = rf"{pattern}\d+"
+    columns = [colname for colname in data.columns if re.match(pattern, colname)]
+
+    if columns == []:
+        raise ValueError(f"No columns matched the given pattern: {pattern}")
+
+    return columns
 
 
 def calculate_standard_deviation(data, pattern):
@@ -88,7 +90,7 @@ def calculate_standard_deviation(data, pattern):
         raise TypeError("The pattern variable needs to be a string")
 
     columns = get_matching_column_names(data, pattern)
-    data_cal = data[columns]
+    data_cal = data[columns].fillna(0)
 
     num_columns = data_cal.select_dtypes(include=np.number).columns.tolist()
     if sorted(columns) != sorted(num_columns):
