@@ -2,20 +2,25 @@ import numpy as np
 import pandas as pd
 import re
 
+
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
+    
     Matching columns are columns whose names start
     with the given pattern and end with an incrementing integer.
+    
     Parameters
     ----------
     data : pandas dataframe
         The dataframe from which to extract columns
     pattern : string
         The prefix of the column names to extract
+        
     Returns
     ----------
     columns : list of strings
         A list of strings that match the pattern
+
     Raises
     ----------
     TypeError
@@ -31,6 +36,7 @@ def get_matching_column_names(data, pattern):
     >>> df = pd.DataFrame(data)
     >>> get_matching_column_names(df, "week_payment")
         ["week_payment1", "week_payment2", "week_payment3"]
+
     """
     if not isinstance(data, pd.DataFrame):
         raise TypeError("The data variable needs to be a pandas dataframe")
@@ -47,11 +53,10 @@ def get_matching_column_names(data, pattern):
 
 
 def calculate_standard_deviation(data, pattern):
-
     """Returns a dataframe with standard deviation of specific columns.
-    
+
     Calculating standard deviation of columns inputed.
-    
+
     Parameters
     ----------
     data : pandas dataframe
@@ -178,6 +183,7 @@ def calculate_percentage_change(
     """
 
     return
+
 
 def calculate_average(df, pattern):
     """
