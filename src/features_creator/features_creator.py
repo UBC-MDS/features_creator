@@ -1,6 +1,7 @@
-import numpy as np
 import pandas as pd
+import numpy as np
 import re
+
 
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
@@ -17,8 +18,8 @@ def get_matching_column_names(data, pattern):
 
     Returns
     ----------
-    columns : pandas dataframe
-        A dataframe consisting of the matching columns
+    columns : list of strings
+        A list of strings that match the pattern
 
     Raises
     ----------
@@ -35,19 +36,28 @@ def get_matching_column_names(data, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> get_matching_column_names(df, "week_payment")
-        week_payment1  week_payment2  week_payment3
-     0              1              1              1
-     1              2              2              2
-     2              3              3              3
+        ["week_payment1", "week_payment2", "week_payment3"]
 
     """
+    if not isinstance(data, pd.DataFrame):
+        raise TypeError("The data variable needs to be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("The pattern variable needs to be a string")
+
+    pattern = rf"{pattern}\d+"
+    columns = [colname for colname in data.columns if re.match(pattern, colname)]
+
+    if columns == []:
+        raise ValueError(f"No columns matched the given pattern: {pattern}")
+
+    return columns
+
 
 def calculate_standard_deviation(data, pattern):
-
     """Returns a dataframe with standard deviation of specific columns.
-    
+
     Calculating standard deviation of columns inputed.
-    
+
     Parameters
     ----------
     data : pandas dataframe
@@ -218,6 +228,7 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
     )
 
     return percent_change
+
 
 
 def calculate_average(df, pattern):
