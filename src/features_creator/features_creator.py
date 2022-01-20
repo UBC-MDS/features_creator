@@ -1,21 +1,26 @@
+import numpy as np
 import pandas as pd
 import numpy as np
 import re
 
 
+import numpy as np
+import pandas as pd
+import re
+
 def get_matching_column_names(data, pattern):
     """Returns a subset of the columns whose names match the pattern.
-
+    
     Matching columns are columns whose names start
     with the given pattern and end with an incrementing integer.
-
+    
     Parameters
     ----------
     data : pandas dataframe
         The dataframe from which to extract columns
     pattern : string
         The prefix of the column names to extract
-
+        
     Returns
     ----------
     columns : list of strings
@@ -26,7 +31,6 @@ def get_matching_column_names(data, pattern):
     TypeError
         If the type of data is not a pandas dataframe or
         if the pattern is not a string
-
     Examples
     ----------
     >>> data = {
@@ -72,8 +76,9 @@ def calculate_standard_deviation(data, pattern):
     Raises
     ----------
     TypeError
-        If the type of data is not a pandas dataframe or
-        if the cols containes elements not in the dataframe
+        If the data variable needs to be a pandas dataframe
+        If the pattern variable needs to be a string
+        If the data frame selected by pattern has non-numeric columns
     Examples
     ----------
     >>> data = {
@@ -88,9 +93,29 @@ def calculate_standard_deviation(data, pattern):
      1              0.0   
      2              0.0   
     """
-    ...
     
-def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=None):
+    if not isinstance(data, pd.DataFrame):
+        raise TypeError("The data variable needs to be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("The pattern variable needs to be a string")
+
+    columns = get_matching_column_names(data, pattern)
+    data_cal = data[columns].fillna(0)
+
+    num_columns = data_cal.select_dtypes(include=np.number).columns.tolist()
+    if sorted(columns) != sorted(num_columns):
+        nonum_columns = set(columns).difference(set(num_columns))
+        raise TypeError(f"Data frame selected by pattern:'{pattern}' has non-numeric columns: {nonum_columns}.")
+
+    out_val = np.var(data_cal, axis=1)
+    out_col = pattern+'_std'
+
+    return pd.DataFrame(out_val, columns=[out_col])
+    
+    
+def calculate_percentage_change(
+    df, pattern, compare_period=(2, 2), time_filter=None, changed_name=None
+):
     """Calculate percentage change over a time period
     (months over months or weeks over weeks)
     for the given column pattern.
@@ -233,7 +258,7 @@ def calculate_percentage_change(df, pattern, compare_period=(2, 2), time_filter=
 
 def calculate_average(df, pattern):
     """
-    Returns a dataframe with average of specific columns matching pattern.
+    Returns a np array with average of specific columns matching pattern.
 
     Parameters
     ----------
@@ -244,8 +269,8 @@ def calculate_average(df, pattern):
 
     Returns
     ----------
-    pandas dataframe
-        A dataframe contains average columns
+    numpy array
+        A numpy array of calculated average
 
     Raises
     ----------
@@ -262,10 +287,21 @@ def calculate_average(df, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> calculate_average(df, "week_payment")
-        ID    week_payment_avg  
-        0              1.0
-        1              2.0
-        2              3.0
-
+        [1.0, 2.0, 3.0]
     """
-    ...
+    # check input type
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df must be a pandas dataframe")
+    if not isinstance(pattern, str):
+        raise TypeError("pattern must be a string")
+
+    # get matching columns
+    columns = get_matching_column_names(df, pattern)
+
+    # calculate average from matching columns
+    df_avg = df[columns].mean(axis=1)
+
+    # convert to np array
+    df_avg = df_avg.to_numpy()
+
+    return df_avg
