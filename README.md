@@ -36,7 +36,7 @@ For datasets that have columns that follow the pattern `quantity_1`, `quantity_2
 ## Installation
 
 ```bash
-$ pip install features_creator
+$ pip install git+https://github.com/UBC-MDS/features_creator
 ```
 
 ## Usage
