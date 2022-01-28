@@ -43,6 +43,7 @@ $ pip install git+https://github.com/UBC-MDS/features_creator
 
 ```python
 import pandas as pd
+from IPython.display import display
 from features_creator.features_creator import (
     get_matching_column_names,
     calculate_standard_deviation,
@@ -68,15 +69,18 @@ df = pd.DataFrame(
 columns = get_matching_column_names(df, "data_usage")
 
 # Calculate standard deviation across time periods
-df["std_monthly_data_usage"] = calculate_standard_deviation(example_data, "data_usage")
+df["std_monthly_data_usage"] = calculate_standard_deviation(df, "data_usage")
 
 # Calculate average across time periods
-df["avg_monthly_data_usage"] = calculate_average(example_data, "data_usage")
+df["avg_monthly_data_usage"] = calculate_average(df, "data_usage")
 
 # Calculate percentage change 2 months over 2 months
 df["percent_change_data_usage"] = calculate_percentage_change(
-    example_data, "data_usage", compare_period=(2, 2)
+    df, "data_usage", compare_period=(2, 2)
 )
+
+# Display data
+display(df)
 ```
 
 ## Contributing
