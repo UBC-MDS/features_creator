@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "features_creator"
-version = "0.1.2"
+version = "0.1.3"
 description = "Helper functions to create new features."
 authors = ["DSCI_524_GROUP26"]
 license = "MIT"
