@@ -108,9 +108,8 @@ def calculate_standard_deviation(data, pattern):
         raise TypeError(f"Data frame selected by pattern:'{pattern}' has non-numeric columns: {nonum_columns}.")
 
     out_val = np.var(data_cal, axis=1)
-    out_col = pattern+'_std'
 
-    return pd.DataFrame(out_val, columns=[out_col])
+    return out_val.values
     
     
 def calculate_percentage_change(
