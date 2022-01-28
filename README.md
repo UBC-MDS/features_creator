@@ -41,7 +41,19 @@ $ pip install git+https://github.com/UBC-MDS/features_creator
 
 ## Usage
 
-- TODO
+`calculate_average` can be used to find the average of matching columns in the dataframe.
+
+    ``` python
+    from from features_creator.features_creator import calculate_average
+
+    # read data from csv
+    df = pd.read_csv("data.csv") # path to csv file
+    avg_week_payment = calculate_average(df, "week_payment")
+
+    # append the result to dataframe
+    df["avg_week_payment"] = avg_week_payment
+    print(df)
+    ```
 
 ## Contributing
 
