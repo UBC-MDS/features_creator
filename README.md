@@ -36,24 +36,63 @@ For datasets that have columns that follow the pattern `quantity_1`, `quantity_2
 ## Installation
 
 ```bash
-$ pip install git+https://github.com/UBC-MDS/features_creator
+$ pip install features_creator
 ```
 
 ## Usage
 
-`calculate_average` can be used to find the average of matching columns in the dataframe.
+```python
+import pandas as pd
+from IPython.display import display
+from features_creator.features_creator import (
+    get_matching_column_names,
+    calculate_standard_deviation,
+    calculate_average,
+    calculate_percentage_change,
+)
 
-    ``` python
-    from from features_creator.features_creator import calculate_average
+# Example data
+df = pd.DataFrame(
+    {
+        "subscriber_id": [1, 2, 3],
+        "data_usage1": [10, 5, 3],  # 1 represent data usage in prediction month (m) - 1
+        "data_usage2": [4, 5, 6],  # m - 2
+        "data_usage3": [7, 8, 9],  # m - 3
+        "data_usage4": [10, 11, 12],  # m - 4
+        "data_usage5": [13, 14, 15],  # m - 5
+        "othercolumn": [5, 6, 7],  # Other example column
+        "data_usage_string6": [5, 6, 7],  # Other example column with an integer
+    }
+)
 
-    # read data from csv
-    df = pd.read_csv("data.csv") # path to csv file
-    avg_week_payment = calculate_average(df, "week_payment")
+# Get matching column names
+columns = get_matching_column_names(df, "data_usage")
 
-    # append the result to dataframe
-    df["avg_week_payment"] = avg_week_payment
-    print(df)
-    ```
+# Calculate standard deviation across time periods
+df["std_monthly_data_usage"] = calculate_standard_deviation(df, "data_usage")
+
+# Calculate average across time periods
+df["avg_monthly_data_usage"] = calculate_average(df, "data_usage")
+
+# Calculate percentage change 2 months over 2 months
+df["percent_change_data_usage"] = calculate_percentage_change(
+    df, "data_usage", compare_period=(2, 2)
+)
+
+# Display data
+display(
+    df[[
+        "subscriber_id",
+        "std_monthly_data_usage",
+        "avg_monthly_data_usage",
+        "percent_change_data_usage",
+    ]]
+)
+   subscriber_id  std_monthly_data_usage  avg_monthly_data_usage  percent_change_data_usage
+0              1                3.059412                     8.8                 -17.647059
+1              2                3.498571                     8.6                 -47.368421
+2              3                4.242641                     9.0                 -57.142857
+```
 
 ## Contributing
 
