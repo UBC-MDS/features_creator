@@ -2,7 +2,7 @@
 name = "alabaster"
 version = "0.7.12"
 description = "A configurable sidebar-enabled Sphinx theme"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -115,11 +115,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 name = "babel"
 version = "2.9.1"
 description = "Internationalization utilities"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -177,11 +173,7 @@ webencodings = "*"
 name = "certifi"
 version = "2021.10.8"
 description = "Python package for providing Mozilla's CA Bundle."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = "*"
 
@@ -200,11 +192,7 @@ pycparser = "*"
 name = "charset-normalizer"
 version = "2.0.10"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5.0"
 
@@ -223,12 +211,6 @@ python-versions = ">=3.6"
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
-<<<<<<< HEAD
-name = "colorama"
-version = "0.4.4"
-description = "Cross-platform colored terminal text."
-category = "dev"
-=======
 name = "codecov"
 version = "2.1.12"
 description = "Hosted coverage reports for GitHub, Bitbucket and Gitlab"
@@ -245,13 +227,10 @@ name = "colorama"
 version = "0.4.4"
 description = "Cross-platform colored terminal text."
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "coverage"
 version = "6.2"
 description = "Code coverage measurement for Python"
@@ -266,7 +245,6 @@ tomli = {version = "*", optional = true, markers = "extra == \"toml\""}
 toml = ["tomli"]
 
 [[package]]
->>>>>>> main
 name = "debugpy"
 version = "1.5.1"
 description = "An implementation of the Debug Adapter Protocol for Python"
@@ -294,11 +272,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "docutils"
 version = "0.17.1"
 description = "Docutils -- Python Documentation Utilities"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -355,11 +329,7 @@ docs = ["sphinx"]
 name = "idna"
 version = "3.3"
 description = "Internationalized Domain Names in Applications (IDNA)"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -367,11 +337,7 @@ python-versions = ">=3.5"
 name = "imagesize"
 version = "1.3.0"
 description = "Getting image size from png/jpeg/jpeg2000/gif file"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -379,11 +345,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "importlib-metadata"
 version = "4.10.1"
 description = "Read metadata from Python packages"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.7"
 
@@ -396,8 +358,6 @@ perf = ["ipython"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy", "importlib-resources (>=1.3)"]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "iniconfig"
 version = "1.1.1"
 description = "iniconfig: brain-dead simple config-ini parsing"
@@ -406,7 +366,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
->>>>>>> main
 name = "ipykernel"
 version = "6.7.0"
 description = "IPython Kernel for Jupyter"
@@ -509,11 +468,7 @@ testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<7.0.0)"]
 name = "jinja2"
 version = "3.0.3"
 description = "A very fast and expressive template engine."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -701,11 +656,7 @@ testing = ["coverage", "psutil", "pytest (>=3.6,<4)", "pytest-benchmark (>=3.2,<
 name = "markupsafe"
 version = "2.0.1"
 description = "Safely add untrusted strings to HTML/XML markup."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -821,11 +772,7 @@ test = ["ipython", "ipykernel", "ipywidgets (<8.0.0)", "pytest (>=4.1)", "pytest
 
 [[package]]
 name = "nbconvert"
-<<<<<<< HEAD
-version = "6.4.1"
-=======
 version = "6.4.0"
->>>>>>> main
 description = "Converting Jupyter Notebooks"
 category = "dev"
 optional = false
@@ -933,12 +880,6 @@ json-logging = ["json-logging"]
 test = ["pytest", "coverage", "requests", "nbval", "selenium", "pytest-cov", "requests-unixsocket"]
 
 [[package]]
-<<<<<<< HEAD
-name = "packaging"
-version = "21.3"
-description = "Core utilities for Python packages"
-category = "dev"
-=======
 name = "numpy"
 version = "1.22.1"
 description = "NumPy is the fundamental package for array computing with Python."
@@ -951,7 +892,6 @@ name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -959,8 +899,6 @@ python-versions = ">=3.6"
 pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "pandas"
 version = "1.3.5"
 description = "Powerful data structures for data analysis, time series, and statistics"
@@ -982,7 +920,6 @@ pytz = ">=2017.3"
 test = ["hypothesis (>=3.58)", "pytest (>=6.0)", "pytest-xdist"]
 
 [[package]]
->>>>>>> main
 name = "pandocfilters"
 version = "1.5.0"
 description = "Utilities for writing pandoc filters in python"
@@ -1042,8 +979,6 @@ docs = ["Sphinx (>=4)", "furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-
 test = ["appdirs (==1.4.4)", "pytest (>=6)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)"]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "pluggy"
 version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
@@ -1056,7 +991,6 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
->>>>>>> main
 name = "prometheus-client"
 version = "0.13.0"
 description = "Python client for the Prometheus monitoring system."
@@ -1069,11 +1003,7 @@ twisted = ["twisted"]
 
 [[package]]
 name = "prompt-toolkit"
-<<<<<<< HEAD
-version = "3.0.25"
-=======
 version = "3.0.24"
->>>>>>> main
 description = "Library for building powerful interactive command lines in Python"
 category = "dev"
 optional = false
@@ -1121,25 +1051,15 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "pygments"
 version = "2.11.2"
 description = "Pygments is a syntax highlighting package written in Python."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
 [[package]]
 name = "pyparsing"
-<<<<<<< HEAD
-version = "3.0.7"
-description = "Python parsing module"
-category = "dev"
-=======
 version = "3.0.6"
 description = "Python parsing module"
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -1155,12 +1075,6 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-<<<<<<< HEAD
-name = "python-dateutil"
-version = "2.8.2"
-description = "Extensions to the standard Python datetime module"
-category = "dev"
-=======
 name = "pytest"
 version = "6.2.5"
 description = "pytest: simple powerful testing with Python"
@@ -1201,7 +1115,6 @@ name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
 category = "main"
->>>>>>> main
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 
@@ -1212,11 +1125,7 @@ six = ">=1.5"
 name = "pytz"
 version = "2021.3"
 description = "World timezone definitions, modern and historical"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = "*"
 
@@ -1260,11 +1169,7 @@ py = {version = "*", markers = "implementation_name == \"pypy\""}
 name = "requests"
 version = "2.27.1"
 description = "Python HTTP for Humans."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
@@ -1295,11 +1200,7 @@ win32 = ["pywin32"]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -1323,11 +1224,7 @@ python-versions = ">=3.5"
 name = "snowballstemmer"
 version = "2.2.0"
 description = "This package provides 29 stemmers for 28 languages generated from Snowball algorithms."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = "*"
 
@@ -1335,11 +1232,7 @@ python-versions = "*"
 name = "sphinx"
 version = "4.4.0"
 description = "Python documentation generator"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -1421,11 +1314,7 @@ sphinx = ["myst-nb", "sphinx-book-theme"]
 name = "sphinxcontrib-applehelp"
 version = "1.0.2"
 description = "sphinxcontrib-applehelp is a sphinx extension which outputs Apple help books"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -1437,11 +1326,7 @@ test = ["pytest"]
 name = "sphinxcontrib-devhelp"
 version = "1.0.2"
 description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp document."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -1453,11 +1338,7 @@ test = ["pytest"]
 name = "sphinxcontrib-htmlhelp"
 version = "2.0.0"
 description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.6"
 
@@ -1469,11 +1350,7 @@ test = ["pytest", "html5lib"]
 name = "sphinxcontrib-jsmath"
 version = "1.0.1"
 description = "A sphinx extension which renders display math in HTML via JavaScript"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -1484,11 +1361,7 @@ test = ["pytest", "flake8", "mypy"]
 name = "sphinxcontrib-qthelp"
 version = "1.0.3"
 description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -1500,11 +1373,7 @@ test = ["pytest"]
 name = "sphinxcontrib-serializinghtml"
 version = "1.1.5"
 description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.5"
 
@@ -1562,19 +1431,11 @@ tests = ["pytest", "typeguard", "pygments", "littleutils"]
 
 [[package]]
 name = "terminado"
-<<<<<<< HEAD
-version = "0.13.1"
-description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-=======
 version = "0.12.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
 category = "dev"
 optional = false
 python-versions = ">=3.6"
->>>>>>> main
 
 [package.dependencies]
 ptyprocess = {version = "*", markers = "os_name != \"nt\""}
@@ -1596,8 +1457,6 @@ python-versions = ">= 3.5"
 test = ["pytest", "pathlib2"]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -1606,7 +1465,6 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
->>>>>>> main
 name = "tomli"
 version = "1.2.3"
 description = "A lil' TOML parser"
@@ -1653,11 +1511,7 @@ python-versions = ">=3.5"
 name = "urllib3"
 version = "1.26.8"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 
@@ -1718,11 +1572,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 name = "zipp"
 version = "3.7.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-<<<<<<< HEAD
-category = "dev"
-=======
 category = "main"
->>>>>>> main
 optional = false
 python-versions = ">=3.7"
 
@@ -1733,11 +1583,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-<<<<<<< HEAD
-content-hash = "20d1f441d62553d37673da1bee280059c535928cbd55fae5826dd098da36b5a4"
-=======
 content-hash = "271451762ef9b8c6da0f66c23ee0650152c111b5e38bd5d7b92f8d8d3f1d0409"
->>>>>>> main
 
 [metadata.files]
 alabaster = [
@@ -1787,13 +1633,10 @@ asttokens = [
     {file = "asttokens-2.0.5-py2.py3-none-any.whl", hash = "sha256:0844691e88552595a6f4a4281a9f7f79b8dd45ca4ccea82e5e05b4bbdb76705c"},
     {file = "asttokens-2.0.5.tar.gz", hash = "sha256:9a54c114f02c7a9480d56550932546a3f1fe71d8a02f1bc7ccd0ee3ee35cf4d5"},
 ]
-<<<<<<< HEAD
-=======
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
     {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
 ]
->>>>>>> main
 attrs = [
     {file = "attrs-21.4.0-py2.py3-none-any.whl", hash = "sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"},
     {file = "attrs-21.4.0.tar.gz", hash = "sha256:626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"},
@@ -1878,20 +1721,15 @@ click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
     {file = "click-8.0.3.tar.gz", hash = "sha256:410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b"},
 ]
-<<<<<<< HEAD
-=======
 codecov = [
     {file = "codecov-2.1.12-py2.py3-none-any.whl", hash = "sha256:585dc217dc3d8185198ceb402f85d5cb5dbfa0c5f350a5abcdf9e347776a5b47"},
     {file = "codecov-2.1.12-py3.8.egg", hash = "sha256:782a8e5352f22593cbc5427a35320b99490eb24d9dcfa2155fd99d2b75cfb635"},
     {file = "codecov-2.1.12.tar.gz", hash = "sha256:a0da46bb5025426da895af90938def8ee12d37fcbcbbbc15b6dc64cf7ebc51c1"},
 ]
->>>>>>> main
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
-<<<<<<< HEAD
-=======
 coverage = [
     {file = "coverage-6.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:6dbc1536e105adda7a6312c778f15aaabe583b0e9a0b0a324990334fd458c94b"},
     {file = "coverage-6.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:174cf9b4bef0db2e8244f82059a5a72bd47e1d40e71c68ab055425172b16b7d0"},
@@ -1941,7 +1779,6 @@ coverage = [
     {file = "coverage-6.2-pp36.pp37.pp38-none-any.whl", hash = "sha256:5829192582c0ec8ca4a2532407bc14c2f338d9878a10442f5d03804a95fac9de"},
     {file = "coverage-6.2.tar.gz", hash = "sha256:e2cad8093172b7d1595b4ad66f24270808658e11acf43a8f95b41276162eb5b8"},
 ]
->>>>>>> main
 debugpy = [
     {file = "debugpy-1.5.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:70b422c63a833630c33e3f9cdbd9b6971f8c5afd452697e464339a21bbe862ba"},
     {file = "debugpy-1.5.1-cp310-cp310-win32.whl", hash = "sha256:3a457ad9c0059a21a6c7d563c1f18e924f5cf90278c722bd50ede6f56b77c7fe"},
@@ -2062,13 +1899,10 @@ importlib-metadata = [
     {file = "importlib_metadata-4.10.1-py3-none-any.whl", hash = "sha256:899e2a40a8c4a1aec681feef45733de8a6c58f3f6a0dbed2eb6574b4387a77b6"},
     {file = "importlib_metadata-4.10.1.tar.gz", hash = "sha256:951f0d8a5b7260e9db5e41d429285b5f451e928479f19d80818878527d36e95e"},
 ]
-<<<<<<< HEAD
-=======
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
->>>>>>> main
 ipykernel = [
     {file = "ipykernel-6.7.0-py3-none-any.whl", hash = "sha256:6203ccd5510ff148e9433fd4a2707c5ce8d688f026427f46e13d7ebf9b3e9787"},
     {file = "ipykernel-6.7.0.tar.gz", hash = "sha256:d82b904fdc2fd8c7b1fbe0fa481c68a11b4cd4c8ef07e6517da1f10cc3114d24"},
@@ -2272,13 +2106,8 @@ nbclient = [
     {file = "nbclient-0.5.10.tar.gz", hash = "sha256:b5fdea88d6fa52ca38de6c2361401cfe7aaa7cd24c74effc5e489cec04d79088"},
 ]
 nbconvert = [
-<<<<<<< HEAD
-    {file = "nbconvert-6.4.1-py3-none-any.whl", hash = "sha256:fe93bc42485c54c5a49a2324c834aca1ff315f320a535bed3e3c4e085d3eebe3"},
-    {file = "nbconvert-6.4.1.tar.gz", hash = "sha256:7dce3f977c2f9651841a3c49b5b7314c742f24dd118b99e51b8eec13c504f555"},
-=======
     {file = "nbconvert-6.4.0-py3-none-any.whl", hash = "sha256:f5ec6a1fad9e3aa2bee7c6a1c4ad3e0fafaa7ff64f29ba56d9da7e1669f8521c"},
     {file = "nbconvert-6.4.0.tar.gz", hash = "sha256:5412ec774c6db4fccecb8c4ba07ec5d37d6dcf5762593cb3d6ecbbeb562ebbe5"},
->>>>>>> main
 ]
 nbdime = [
     {file = "nbdime-3.1.1-py2.py3-none-any.whl", hash = "sha256:ea4ddf919e3035800ef8bd5552b814522207cb154ca7512565e4539a54c74dbf"},
@@ -2296,8 +2125,6 @@ notebook = [
     {file = "notebook-6.4.8-py3-none-any.whl", hash = "sha256:3e702fcc54b8ae597533c3864793b7a1e971dec9e112f67235828d8a798fd654"},
     {file = "notebook-6.4.8.tar.gz", hash = "sha256:1e985c9dc6f678bdfffb9dc657306b5469bfa62d73e03f74e8defbf76d284312"},
 ]
-<<<<<<< HEAD
-=======
 numpy = [
     {file = "numpy-1.22.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:3d62d6b0870b53799204515145935608cdeb4cebb95a26800b6750e48884cc5b"},
     {file = "numpy-1.22.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:831f2df87bd3afdfc77829bc94bd997a7c212663889d56518359c827d7113b1f"},
@@ -2322,13 +2149,10 @@ numpy = [
     {file = "numpy-1.22.1-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e60ef82c358ded965fdd3132b5738eade055f48067ac8a5a8ac75acc00cad31f"},
     {file = "numpy-1.22.1.zip", hash = "sha256:e348ccf5bc5235fc405ab19d53bec215bb373300e5523c7b476cc0da8a5e9973"},
 ]
->>>>>>> main
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
 ]
-<<<<<<< HEAD
-=======
 pandas = [
     {file = "pandas-1.3.5-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:62d5b5ce965bae78f12c1c0df0d387899dd4211ec0bdc52822373f13a3a022b9"},
     {file = "pandas-1.3.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:adfeb11be2d54f275142c8ba9bf67acee771b7186a5745249c7d5a06c670136b"},
@@ -2356,7 +2180,6 @@ pandas = [
     {file = "pandas-1.3.5-cp39-cp39-win_amd64.whl", hash = "sha256:32e1a26d5ade11b547721a72f9bfc4bd113396947606e00d5b4a5b79b3dcb006"},
     {file = "pandas-1.3.5.tar.gz", hash = "sha256:1e4285f5de1012de20ca46b188ccf33521bff61ba5c5ebd78b4fb28e5416a9f1"},
 ]
->>>>>>> main
 pandocfilters = [
     {file = "pandocfilters-1.5.0-py2.py3-none-any.whl", hash = "sha256:33aae3f25fd1a026079f5d27bdd52496f0e0803b3469282162bafdcbdf6ef14f"},
     {file = "pandocfilters-1.5.0.tar.gz", hash = "sha256:0b679503337d233b4339a817bfc8c50064e2eff681314376a47cb582305a7a38"},
@@ -2381,25 +2204,17 @@ platformdirs = [
     {file = "platformdirs-2.4.1-py3-none-any.whl", hash = "sha256:1d7385c7db91728b83efd0ca99a5afb296cab9d0ed8313a45ed8ba17967ecfca"},
     {file = "platformdirs-2.4.1.tar.gz", hash = "sha256:440633ddfebcc36264232365d7840a970e75e1018d15b4327d11f91909045fda"},
 ]
-<<<<<<< HEAD
-=======
 pluggy = [
     {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
     {file = "pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
 ]
->>>>>>> main
 prometheus-client = [
     {file = "prometheus_client-0.13.0-py3-none-any.whl", hash = "sha256:70782d19ea1a3aeb8523aa07780dbee6a595e566198ab4ed7fdc32b53b5fa1d1"},
     {file = "prometheus_client-0.13.0.tar.gz", hash = "sha256:3fdc6fc5b03a9eaee44d015e2913b496864b9ad6557013f23e28f926d7b62913"},
 ]
 prompt-toolkit = [
-<<<<<<< HEAD
-    {file = "prompt_toolkit-3.0.25-py3-none-any.whl", hash = "sha256:c79f8d3fe475116a2daaed1c5c08d4450becbe7b5c1a513d50b6d45248857a67"},
-    {file = "prompt_toolkit-3.0.25.tar.gz", hash = "sha256:45f3137a16a7bb5893928f918bfcc36cfe812db49437d087201cd2a78016cbb3"},
-=======
     {file = "prompt_toolkit-3.0.24-py3-none-any.whl", hash = "sha256:e56f2ff799bacecd3e88165b1e2f5ebf9bcd59e80e06d395fa0cc4b8bd7bb506"},
     {file = "prompt_toolkit-3.0.24.tar.gz", hash = "sha256:1bb05628c7d87b645974a1bad3f17612be0c29fa39af9f7688030163f680bad6"},
->>>>>>> main
 ]
 ptyprocess = [
     {file = "ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"},
@@ -2422,13 +2237,8 @@ pygments = [
     {file = "Pygments-2.11.2.tar.gz", hash = "sha256:4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"},
 ]
 pyparsing = [
-<<<<<<< HEAD
-    {file = "pyparsing-3.0.7-py3-none-any.whl", hash = "sha256:a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484"},
-    {file = "pyparsing-3.0.7.tar.gz", hash = "sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"},
-=======
     {file = "pyparsing-3.0.6-py3-none-any.whl", hash = "sha256:04ff808a5b90911829c55c4e26f75fa5ca8a2f5f36aa3a51f68e27033341d3e4"},
     {file = "pyparsing-3.0.6.tar.gz", hash = "sha256:d9bdec0013ef1eb5a84ab39a3b3868911598afa494f5faa038647101504e2b81"},
->>>>>>> main
 ]
 pyrsistent = [
     {file = "pyrsistent-0.18.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:df46c854f490f81210870e509818b729db4488e1f30f2a1ce1698b2295a878d1"},
@@ -2453,8 +2263,6 @@ pyrsistent = [
     {file = "pyrsistent-0.18.1-cp39-cp39-win_amd64.whl", hash = "sha256:e24a828f57e0c337c8d8bb9f6b12f09dfdf0273da25fda9e314f0b684b415a07"},
     {file = "pyrsistent-0.18.1.tar.gz", hash = "sha256:d4d61f8b993a7255ba714df3aca52700f8125289f84f704cf80916517c46eb96"},
 ]
-<<<<<<< HEAD
-=======
 pytest = [
     {file = "pytest-6.2.5-py3-none-any.whl", hash = "sha256:7310f8d27bc79ced999e760ca304d69f6ba6c6649c0b60fb0e04a4a77cacc134"},
     {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
@@ -2463,7 +2271,6 @@ pytest-cov = [
     {file = "pytest-cov-3.0.0.tar.gz", hash = "sha256:e7f0f5b1617d2210a2cabc266dfe2f4c75a8d32fb89eafb7ad9d06f6d076d470"},
     {file = "pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
 ]
->>>>>>> main
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
@@ -2684,25 +2491,17 @@ stack-data = [
     {file = "stack_data-0.1.4.tar.gz", hash = "sha256:7769ed2482ce0030e00175dd1bf4ef1e873603b6ab61cd3da443b410e64e9477"},
 ]
 terminado = [
-<<<<<<< HEAD
-    {file = "terminado-0.13.1-py3-none-any.whl", hash = "sha256:f446b522b50a7aa68b5def0a02893978fb48cb82298b0ebdae13003c6ee6f198"},
-    {file = "terminado-0.13.1.tar.gz", hash = "sha256:5b82b5c6e991f0705a76f961f43262a7fb1e55b093c16dca83f16384a7f39b7b"},
-=======
     {file = "terminado-0.12.1-py3-none-any.whl", hash = "sha256:09fdde344324a1c9c6e610ee4ca165c4bb7f5bbf982fceeeb38998a988ef8452"},
     {file = "terminado-0.12.1.tar.gz", hash = "sha256:b20fd93cc57c1678c799799d117874367cc07a3d2d55be95205b1a88fa08393f"},
->>>>>>> main
 ]
 testpath = [
     {file = "testpath-0.5.0-py3-none-any.whl", hash = "sha256:8044f9a0bab6567fc644a3593164e872543bb44225b0e24846e2c89237937589"},
     {file = "testpath-0.5.0.tar.gz", hash = "sha256:1acf7a0bcd3004ae8357409fc33751e16d37ccc650921da1094a86581ad1e417"},
 ]
-<<<<<<< HEAD
-=======
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
 ]
->>>>>>> main
 tomli = [
     {file = "tomli-1.2.3-py3-none-any.whl", hash = "sha256:e3069e4be3ead9668e21cb9b074cd948f7b3113fd9c8bba083f48247aab8b11c"},
     {file = "tomli-1.2.3.tar.gz", hash = "sha256:05b6166bff487dc068d322585c7ea4ef78deed501cc124060e0f238e89a9231f"},
