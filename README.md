@@ -41,7 +41,43 @@ $ pip install git+https://github.com/UBC-MDS/features_creator
 
 ## Usage
 
-- TODO
+```python
+import pandas as pd
+from features_creator.features_creator import (
+    get_matching_column_names,
+    calculate_standard_deviation,
+    calculate_average,
+    calculate_percentage_change,
+)
+
+# Example data
+df = pd.DataFrame(
+    {
+        "subscriber_id": [1, 2, 3],
+        "data_usage1": [10, 5, 3],  # 1 represent data usage in prediction month (m) - 1
+        "data_usage2": [4, 5, 6],  # m - 2
+        "data_usage3": [7, 8, 9],  # m - 3
+        "data_usage4": [10, 11, 12],  # m - 4
+        "data_usage5": [13, 14, 15],  # m - 5
+        "othercolumn": [5, 6, 7],  # Other example column
+        "data_usage_string6": [5, 6, 7],  # Other example column with an integer
+    }
+)
+
+# Get matching column names
+columns = get_matching_column_names(df, "data_usage")
+
+# Calculate standard deviation across time periods
+df["std_monthly_data_usage"] = calculate_standard_deviation(example_data, "data_usage")
+
+# Calculate average across time periods
+df["avg_monthly_data_usage"] = calculate_average(example_data, "data_usage")
+
+# Calculate percentage change 2 months over 2 months
+df["percent_change_data_usage"] = calculate_percentage_change(
+    example_data, "data_usage", compare_period=(2, 2)
+)
+```
 
 ## Contributing
 
