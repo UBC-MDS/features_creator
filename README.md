@@ -80,7 +80,18 @@ df["percent_change_data_usage"] = calculate_percentage_change(
 )
 
 # Display data
-display(df)
+display(
+    df[[
+        "subscriber_id",
+        "std_monthly_data_usage",
+        "avg_monthly_data_usage",
+        "percent_change_data_usage",
+    ]]
+)
+   subscriber_id  std_monthly_data_usage  avg_monthly_data_usage  percent_change_data_usage
+0              1                3.059412                     8.8                 -17.647059
+1              2                3.498571                     8.6                 -47.368421
+2              3                4.242641                     9.0                 -57.142857
 ```
 
 ## Contributing
