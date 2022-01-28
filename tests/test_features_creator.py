@@ -143,8 +143,8 @@ def test_calculate_standard_deviation(json):
             
             
     if json["check"] == "TypeErrorOutput":
-        assert isinstance(calculate_standard_deviation(json["data"], json["pattern"]), pd.DataFrame), \
-            "Returned the wrong data type, output should be data frame"
+        assert isinstance(calculate_standard_deviation(json["data"], json["pattern"]), np.ndarray), \
+            "Returned the wrong data type, output should be numpy array"
             
             
     if json["check"] == "AccuracyOutput":
