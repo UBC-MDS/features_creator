@@ -155,7 +155,8 @@ def test_calculate_standard_deviation(json):
         assert np.array_equal(calculate_standard_deviation(test_df.iloc[:, 0:1], "week_payment"), np.array([0]*test_df.shape[0])), \
             "Should a column of 0, if input data frame has only one column"
         # Test if the function return correct value 
-        assert np.array_equal(calculate_standard_deviation(test_df, "week_payment"), np.array([6., 6., 6.])), \
+        print(calculate_standard_deviation(test_df, "week_payment"))
+        assert np.array_equal(calculate_standard_deviation(test_df, "week_payment"), np.array([6**0.5, 6**0.5, 6**0.5])), \
             "The result is not right"
         
 def test_calculate_percentage_change():

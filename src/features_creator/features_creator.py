@@ -88,10 +88,7 @@ def calculate_standard_deviation(data, pattern):
         "othercolumn": [5, 6, 7]}
     >>> df = pd.DataFrame(data)
     >>> calculate_standard_deviation(df, "week_payment")
-        week_payment_std
-     0              0.0   
-     1              0.0   
-     2              0.0   
+        array([0.0, 0.0, 0.0])
     """
     
     if not isinstance(data, pd.DataFrame):
@@ -107,7 +104,7 @@ def calculate_standard_deviation(data, pattern):
         nonum_columns = set(columns).difference(set(num_columns))
         raise TypeError(f"Data frame selected by pattern:'{pattern}' has non-numeric columns: {nonum_columns}.")
 
-    out_val = np.var(data_cal, axis=1)
+    out_val = np.std(data_cal, axis=1)
 
     return out_val.values
     
