@@ -143,19 +143,20 @@ def test_calculate_standard_deviation(json):
             
             
     if json["check"] == "TypeErrorOutput":
-        assert isinstance(calculate_standard_deviation(json["data"], json["pattern"]), pd.DataFrame), \
-            "Returned the wrong data type, output should be data frame"
+        assert isinstance(calculate_standard_deviation(json["data"], json["pattern"]), np.ndarray), \
+            "Returned the wrong data type, output should be numpy array"
             
             
     if json["check"] == "AccuracyOutput":
         # Test if the function return correct value when there is only one element
-        assert calculate_standard_deviation(test_df.iloc[0:1, 0:1], "week_payment").values == np.array([[0]]), \
+        assert calculate_standard_deviation(test_df.iloc[0:1, 0:1], "week_payment") == np.array([0]), \
             "Should return [0], if input data frame has only one element"
         # Test if the function return correct value when there is only one column
-        assert np.array_equal(calculate_standard_deviation(test_df.iloc[:, 0:1], "week_payment").values, np.array([[0]]*test_df.shape[0])), \
+        assert np.array_equal(calculate_standard_deviation(test_df.iloc[:, 0:1], "week_payment"), np.array([0]*test_df.shape[0])), \
             "Should a column of 0, if input data frame has only one column"
         # Test if the function return correct value 
-        assert np.array_equal(calculate_standard_deviation(test_df, "week_payment").values, np.array([[6.], [6.], [6.]])), \
+        print(calculate_standard_deviation(test_df, "week_payment"))
+        assert np.array_equal(calculate_standard_deviation(test_df, "week_payment"), np.array([6**0.5, 6**0.5, 6**0.5])), \
             "The result is not right"
         
 def test_calculate_percentage_change():
