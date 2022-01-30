@@ -1,3 +1,4 @@
+[![ci-cd](https://github.com/UBC-MDS/features_creator/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/features_creator/actions/workflows/ci-cd.yml)
 # features_creator
 
 Helper functions to create new features for temporal data.
