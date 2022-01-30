@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.1 (2022-01-30)
+
+
 ## v1.1.0 (2022-01-28)
 ### Feature
 * Add calculate_percentage_change function ([`addbf4e`](https://github.com/UBC-MDS/features_creator/commit/addbf4e9c5d31f139e7a9343c513f4342cb7f1d9))
