@@ -1,4 +1,5 @@
 [![ci-cd](https://github.com/UBC-MDS/features_creator/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/features_creator/actions/workflows/ci-cd.yml)
+[![Documentation Status](https://readthedocs.org/projects/features_creator/badge/?version=latest)](https://features_creator.readthedocs.io/en/latest/?badge=latest)
 # features_creator
 
 Helper functions to create new features for temporal data.
